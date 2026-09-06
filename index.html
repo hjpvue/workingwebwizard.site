@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Web Wizard | IT Desktop & Web Support George</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --heading: #0f172a;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { text-align: center; padding: 40px 20px; background: var(--primary); color: white; border-radius: 8px; margin-bottom: 30px; }
+        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        header p { font-size: 1.1rem; color: #94a3b8; }
+        .badge { background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-top: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+        .card h3 { color: var(--heading); font-size: 1.3rem; margin-bottom: 10px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+        .price { font-size: 1.6rem; font-weight: bold; color: var(--heading); margin: 15px 0 5px 0; }
+        .timeline { font-size: 0.85rem; color: #64748b; font-style: italic; margin-bottom: 15px; }
+        ul { list-style: none; margin-bottom: 20px; }
+        ul li { margin-bottom: 8px; padding-left: 18px; position: relative; }
+        ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .btn { display: inline-block; text-align: center; background: var(--accent); color: white; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; border: none; cursor: pointer; }
+        .btn:hover { background: #0369a1; }
+        .table-container { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 12px; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg); color: var(--heading); }
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #64748b; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <header>
+        <h1>Working Web Wizard</h1>
+        <p>Reliable Desktop IT Support & High-Performance Web Development</p>
+        <span class="badge">Serving George & Surrounds</span>
+    </header>
+
+
+    <!-- Core Value Proposition -->
+    <section style="background: white; padding: 24px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 30px;">
+        <h2 style="color: var(--heading); margin-bottom: 10px;">Core Value Proposition</h2>
+        <p>We provide zero-bloat, rapid-response IT desktop support and custom web development tailored for businesses across George and the Garden Route. Whether resolving hardware failures, deploying corporate web presences, or engineering bespoke web applications, we deliver robust tech solutions with transparent pricing and zero hidden fees.</p>
+    </section>
+
+
+    <!-- Package Tiers -->
+    <h2 style="color: var(--heading); margin-bottom: 20px;">Featured Packages</h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <h3>Corporate Presence Website</h3>
+                <p>A fast, responsive 5-page corporate website designed to establish local market authority.</p>
+                <div class="price">R 7,500</div>
+                <div class="timeline">Turnaround: 7 – 10 Business Days</div>
+                <ul>
+                    <li>Custom HTML/CSS or Light WP setup</li>
+                    <li>Mobile responsive & SEO optimized</li>
+                    <li>Contact form & Google Maps integration</li>
+                    <li>SSL & Domain routing setup</li>
+                </ul>
+            </div>
+            <!-- Replace href with your PayFast Payment Link -->
+            <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&receiver=YOUR_PAYFAST_ID&item_name=Corporate+Website+Package&amount=7500.00" class="btn">Order Package</a>
+        </div>
+
+
+        <div class="card">
+            <div>
+                <h3>Custom Web App Build</h3>
+                <p>Bespoke web application development for client portals, custom tools, or workflow automation.</p>
+                <div class="price">From R 28,000</div>
+                <div class="timeline">Turnaround: 4 – 6 Weeks</div>
+                <ul>
+                    <li>Full-stack architecture & DB design</li>
+                    <li>User authentication & roles</li>
+                    <li>API integrations & payment gateways</li>
+                    <li>Staging & deployment pipeline</li>
+                </ul>
+            </div>
+            <a href="mailto:hendrik@workingwebwizard.site?subject=Web%20App%20Build%20Inquiry" class="btn">Request Proposal</a>
+        </div>
+
+
+        <div class="card">
+            <div>
+                <h3>Desktop & On-Site Support</h3>
+                <p>Hardware diagnostics, OS repair, network setup, and local workstation maintenance in George.</p>
+                <div class="price">R 550 <span style="font-size:0.9rem; font-weight:normal;">/ hour</span></div>
+                <div class="timeline">On-demand / Same-day callout</div>
+                <ul>
+                    <li>PC diagnostics & hardware upgrades</li>
+                    <li>Virus removal & system recovery</li>
+                    <li>Local network & router configuration</li>
+                    <li>On-site in George & Surrounds</li>
+                </ul>
+            </div>
+            <a href="mailto:hendrik@workingwebwizard.site?subject=Desktop%20Support%20Request" class="btn">Book Support</a>
+        </div>
+    </div>
+
+
+    <!-- Hourly & Specialized Rates -->
+    <div class="table-container">
+        <h2 style="color: var(--heading); margin-bottom: 15px;">Hourly Rates & Ad-Hoc Services</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service Category</th>
+                    <th>Rate (ZAR)</th>
+                    <th>Estimated Timeline / Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Desktop IT Support</strong></td>
+                    <td>R 550 / hour</td>
+                    <td>Minimum 1-hour charge (George & Surrounds)</td>
+                </tr>
+                <tr>
+                    <td><strong>Hourly Custom Coding</strong> (JS, PHP, HTML/CSS)</td>
+                    <td>R 650 / hour</td>
+                    <td>Billed per 30-min increment after first hour</td>
+                </tr>
+                <tr>
+                    <td><strong>Web App Maintenance & Updates</strong></td>
+                    <td>R 600 / hour</td>
+                    <td>Available as ad-hoc or monthly retainer</td>
+                </tr>
+                <tr>
+                    <td><strong>Social Media Ads Management</strong></td>
+                    <td>R 450 / hour</td>
+                    <td>Campaign setup, targeting & creative copy</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <footer>
+        <p>Contact: <a href="mailto:hendrik@workingwebwizard.site" style="color: var(--accent);">hendrik@workingwebwizard.site</a> | Serving George and Surrounds, Western Cape</p>
+        <p style="margin-top: 5px;">&copy; Working Web Wizard. All rights reserved.</p>
+    </footer>
+</div>
+
+
+</body>
+</html>
