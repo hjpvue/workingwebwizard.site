@@ -3,158 +3,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Working Web Wizard | IT Desktop & Web Support George</title>
+    <title>Working Web Wizard | IT Desktop & Web Development George</title>
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #0284c7;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #334155;
-            --heading: #0f172a;
-            --border: #e2e8f0;
+            --abyssal-blue: #0C1A3A;
+            --obsidian: #0C1425;
+            --bioluminescent-green: #1EE1AA;
+            --fusion-gold: #F8C51B;
+            --aqua: #00C6FF;
+            --warp-cyan: #0CF2F2;
+            --text-main: #E2E8F0;
+            --text-muted: #94A3B8;
+            --border: #1E293B;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        header { text-align: center; padding: 40px 20px; background: var(--primary); color: white; border-radius: 8px; margin-bottom: 30px; }
-        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        header p { font-size: 1.1rem; color: #94a3b8; }
-        .badge { background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-top: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
-        .card h3 { color: var(--heading); font-size: 1.3rem; margin-bottom: 10px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
-        .price { font-size: 1.6rem; font-weight: bold; color: var(--heading); margin: 15px 0 5px 0; }
-        .timeline { font-size: 0.85rem; color: #64748b; font-style: italic; margin-bottom: 15px; }
-        ul { list-style: none; margin-bottom: 20px; }
-        ul li { margin-bottom: 8px; padding-left: 18px; position: relative; }
-        ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-        .btn { display: inline-block; text-align: center; background: var(--accent); color: white; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; border: none; cursor: pointer; }
-        .btn:hover { background: #0369a1; }
-        .table-container { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 40px; }
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 12px; border-bottom: 1px solid var(--border); }
-        th { background: var(--bg); color: var(--heading); }
-        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #64748b; border-top: 1px solid var(--border); }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: linear-gradient(rgba(12, 26, 58, 0.92), rgba(12, 20, 37, 0.96)), url('https://lh3.googleusercontent.com/d/177kB3qfmu9UZPjdEFlzb8zynlmT-jITv') center/cover fixed;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Banner & Header Styling */
+        header {
+            background: linear-gradient(rgba(12, 20, 37, 0.75), rgba(12, 20, 37, 0.95)), url('https://lh3.googleusercontent.com/d/11y9dHjYwBf7v1sLOKETndP745qe1_B7Z') center/cover no-repeat;
+            border: 1px solid var(--aqua);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 198, 255, 0.25);
+        }
+
+        .logo-container {
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            max-width: 220px;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid var(--bioluminescent-green);
+            box-shadow: 0 0 15px rgba(30, 225, 170, 0.4);
+        }
+
+        h1, h2, h3 {
+            color: var(--bioluminescent-green);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(30, 225, 170, 0.3);
+        }
+
+        header p {
+            color: var(--aqua);
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        .badge {
+            background: var(--fusion-gold);
+            color: var(--obsidian);
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Callout Box */
+        .callout-box {
+            background: var(--obsidian);
+            border: 1px solid var(--aqua);
+            border-left: 5px solid var(--aqua);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 35px;
+        }
+
+        .callout-box h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Inclusions Highlight Bar */
+        .inclusions-bar {
+            background: var(--obsidian);
+            border: 1px solid var(--bioluminescent-green);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 35px;
+        }
+
+        .inclusions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .inclusion-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .inclusion-item span {
+            color: var(--bioluminescent-green);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Grid & Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--obsidian);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--warp-cyan);
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--aqua);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--fusion-gold);
+            margin: 15px 0 5px 0;
+        }
+
+        .price-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .timeline {
+            font-size: 0.85rem;
+            color: var(--aqua);
+            font-style: italic;
+            margin-bottom: 18px;
+        }
+
+        ul.itemized-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        ul.itemized-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+        }
+
+        ul.itemized-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--warp-cyan);
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--fusion-gold);
+            color: var(--obsidian);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--warp-cyan);
+            color: var(--obsidian);
+        }
+
+        /* Tables */
+        .table-container {
+            background: var(--obsidian);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(12, 26, 58, 0.6);
+            color: var(--bioluminescent-green);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            font-size: 0.93rem;
+        }
+
+        tr:hover td {
+            background: rgba(0, 198, 255, 0.05);
+        }
+
+        /* Ad Networks Badge Group */
+        .ad-platforms {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .ad-tag {
+            background: rgba(0, 198, 255, 0.15);
+            color: var(--aqua);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(0, 198, 255, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--warp-cyan);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
-
 <div class="container">
     <header>
+        <div class="logo-container">
+            <img src="https://lh3.googleusercontent.com/d/1EhBGvHv26srVxYlmQTnnXiDeHNQH_cYU" alt="Working Web Wizard Logo">
+        </div>
         <h1>Working Web Wizard</h1>
-        <p>Reliable Desktop IT Support & High-Performance Web Development</p>
-        <span class="badge">Serving George & Surrounds</span>
+        <p>Developing Digital Magic | Desktop IT Support & Web Engineering</p>
+        <span class="badge">FREE QUOTES • Entry-Level Pricing • George & Surrounds</span>
     </header>
 
-
     <!-- Core Value Proposition -->
-    <section style="background: white; padding: 24px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 30px;">
-        <h2 style="color: var(--heading); margin-bottom: 10px;">Core Value Proposition</h2>
-        <p>We provide zero-bloat, rapid-response IT desktop support and custom web development tailored for businesses across George and the Garden Route. Whether resolving hardware failures, deploying corporate web presences, or engineering bespoke web applications, we deliver robust tech solutions with transparent pricing and zero hidden fees.</p>
+    <section class="callout-box">
+        <h2>Affordable, High-Performance Tech Support</h2>
+        <p>Offering entry-level, cost-effective web development, digital solutions, and local IT desktop support for small businesses, freelancers, and startups in George and the Garden Route. Transparent pricing with comprehensive itemisation and no hidden fees.</p>
     </section>
 
+    <!-- Value-Added Inclusions -->
+    <section class="inclusions-bar">
+        <h2>Standard Package Inclusions</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Every fixed-price site or web application package automatically includes:</p>
+        <div class="inclusions-grid">
+            <div class="inclusion-item"><span>✓</span> Free SSL Certificate Integration</div>
+            <div class="inclusion-item"><span>✓</span> 12 Months Cloud Hosting Included</div>
+            <div class="inclusion-item"><span>✓</span> 1 Major Post-Launch Update</div>
+            <div class="inclusion-item"><span>✓</span> Custom Business Email Setup</div>
+            <div class="inclusion-item"><span>✓</span> Social Media Platform Integration</div>
+            <div class="inclusion-item"><span>✓</span> Standard Legal & Terms Documentation</div>
+        </div>
+    </section>
 
     <!-- Package Tiers -->
-    <h2 style="color: var(--heading); margin-bottom: 20px;">Featured Packages</h2>
+    <h2 style="margin-bottom: 20px;">Featured Service Packages</h2>
     <div class="grid">
+        
+        <!-- Recalculated Web Site Package -->
         <div class="card">
             <div>
-                <h3>Corporate Presence Website</h3>
-                <p>A fast, responsive 5-page corporate website designed to establish local market authority.</p>
-                <div class="price">R 7,500</div>
-                <div class="timeline">Turnaround: 7 – 10 Business Days</div>
-                <ul>
-                    <li>Custom HTML/CSS or Light WP setup</li>
-                    <li>Mobile responsive & SEO optimized</li>
-                    <li>Contact form & Google Maps integration</li>
-                    <li>SSL & Domain routing setup</li>
+                <h3>Corporate Website</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Complete entry-level digital presence for business authority.</p>
+                <div class="price">R 3,499.99 <span class="price-sub">once-off</span></div>
+                <div class="timeline">Turnaround: 5 – 7 Business Days</div>
+                
+                <ul class="itemized-list">
+                    <li><strong>Up to 5 Custom Pages:</strong> Home, About, Services, Gallery/Portfolio, Contact Us.</li>
+                    <li><strong>12 Months Hosting & Domain Routing:</strong> Secure server setup with zero setup fee.</li>
+                    <li><strong>Free SSL Certificate:</strong> Full HTTPS security and browser trust compliance.</li>
+                    <li><strong>Responsive Layout:</strong> Mobile, tablet, and desktop display optimization.</li>
+                    <li><strong>Lead Capture & Contact Form:</strong> Direct-to-email query routing & Google Maps.</li>
+                    <li><strong>Social Media Integration:</strong> Direct links & widgets for Facebook, LinkedIn & Instagram.</li>
+                    <li><strong>Legal Documentation:</strong> <a href="#legal" style="color: var(--warp-cyan);">Privacy Policy & Terms Placeholder</a>.</li>
+                    <li><strong>1 Major Post-Launch Update:</strong> Scope revision within first 60 days.</li>
                 </ul>
             </div>
-            <!-- Replace href with your PayFast Payment Link -->
-            <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&receiver=YOUR_PAYFAST_ID&item_name=Corporate+Website+Package&amount=7500.00" class="btn">Order Package</a>
+            <a href="mailto:hendrik@workingwebwizard.site?subject=Corporate%20Website%20Package%20Inquiry" class="btn">Order Site Package</a>
         </div>
 
-
+        <!-- Recalculated Custom Web App Package -->
         <div class="card">
             <div>
-                <h3>Custom Web App Build</h3>
-                <p>Bespoke web application development for client portals, custom tools, or workflow automation.</p>
-                <div class="price">From R 28,000</div>
-                <div class="timeline">Turnaround: 4 – 6 Weeks</div>
-                <ul>
-                    <li>Full-stack architecture & DB design</li>
-                    <li>User authentication & roles</li>
-                    <li>API integrations & payment gateways</li>
-                    <li>Staging & deployment pipeline</li>
+                <h3>Custom Web App</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Tailored online applications, portals, and workflow engines.</p>
+                <div class="price">R 12,999.99 <span class="price-sub">entry-level base</span></div>
+                <div class="timeline">Turnaround: 3 – 4 Weeks</div>
+                
+                <ul class="itemized-list">
+                    <li><strong>Full-Stack Architecture:</strong> JavaScript frontend coupled with backend database models.</li>
+                    <li><strong>User Authentication:</strong> Secure user registration, logins, and permission roles.</li>
+                    <li><strong>Custom Dashboards:</strong> Client portals, administrative panels, or booking engines.</li>
+                    <li><strong>Payment Gateway Hooks:</strong> PayFast or custom gateway integration readiness.</li>
+                    <li><strong>Database Provisioning:</strong> Data structure design, API setup, and staging build.</li>
+                    <li><strong>12 Months Managed Hosting:</strong> Cloud deployment and server maintenance.</li>
+                    <li><strong>Included Maintenance:</strong> System diagnostic monitoring & security updates.</li>
+                    <li><strong>Legal & Terms Docs:</strong> <a href="#legal" style="color: var(--warp-cyan);">Custom Legal Agreements Placeholder</a>.</li>
                 </ul>
             </div>
             <a href="mailto:hendrik@workingwebwizard.site?subject=Web%20App%20Build%20Inquiry" class="btn">Request Proposal</a>
         </div>
 
-
+        <!-- Desktop & Technical Support -->
         <div class="card">
             <div>
-                <h3>Desktop & On-Site Support</h3>
-                <p>Hardware diagnostics, OS repair, network setup, and local workstation maintenance in George.</p>
-                <div class="price">R 550 <span style="font-size:0.9rem; font-weight:normal;">/ hour</span></div>
-                <div class="timeline">On-demand / Same-day callout</div>
-                <ul>
-                    <li>PC diagnostics & hardware upgrades</li>
-                    <li>Virus removal & system recovery</li>
-                    <li>Local network & router configuration</li>
-                    <li>On-site in George & Surrounds</li>
+                <h3>IT & Desktop Support</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">On-site hardware troubleshooting, recovery & system upgrades.</p>
+                <div class="price">R 350.00 <span class="price-sub">/ hour</span></div>
+                <div class="timeline">On-demand / Same-day dispatch</div>
+                
+                <ul class="itemized-list">
+                    <li><strong>Hardware Diagnostics & Repairs:</strong> Component testing, SSD upgrades, and RAM fixes.</li>
+                    <li><strong>OS Repair & Optimization:</strong> Windows/Linux restoration, bloatware cleanup, driver updates.</li>
+                    <li><strong>Virus & Malware Removal:</strong> Deep scan, infection cleanups, and firewall installation.</li>
+                    <li><strong>Networking & Routers:</strong> Wi-Fi extension, router configuration, LAN setups.</li>
+                    <li><strong>Data Backup & Recovery:</strong> Automated local or cloud backup strategies.</li>
+                    <li><strong>On-Site Service:</strong> Direct response across George and surrounding towns.</li>
                 </ul>
             </div>
-            <a href="mailto:hendrik@workingwebwizard.site?subject=Desktop%20Support%20Request" class="btn">Book Support</a>
+            <a href="mailto:hendrik@workingwebwizard.site?subject=Desktop%20IT%20Support%20Request" class="btn">Book Support</a>
         </div>
+
     </div>
 
-
-    <!-- Hourly & Specialized Rates -->
+    <!-- Hourly & Specialized Rates Table -->
     <div class="table-container">
-        <h2 style="color: var(--heading); margin-bottom: 15px;">Hourly Rates & Ad-Hoc Services</h2>
+        <h2 style="margin-bottom: 15px;">Calculated Hourly Rates & Ad-Hoc Services</h2>
         <table>
             <thead>
                 <tr>
                     <th>Service Category</th>
-                    <th>Rate (ZAR)</th>
-                    <th>Estimated Timeline / Unit</th>
+                    <th>Calculated Rate (ZAR)</th>
+                    <th>Detailed Itemisation & Deliverables</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Desktop IT Support</strong></td>
-                    <td>R 550 / hour</td>
-                    <td>Minimum 1-hour charge (George & Surrounds)</td>
+                    <td><strong>SEO & Maintenance</strong></td>
+                    <td>R 250.00 / hr</td>
+                    <td>On-page SEO optimization, meta tags, Google Search Console indexing, site speed tuning, broken link repairs, and routine content updates.</td>
                 </tr>
                 <tr>
-                    <td><strong>Hourly Custom Coding</strong> (JS, PHP, HTML/CSS)</td>
-                    <td>R 650 / hour</td>
-                    <td>Billed per 30-min increment after first hour</td>
+                    <td><strong>IT Desktop Support</strong></td>
+                    <td>R 350.00 / hr</td>
+                    <td>Hardware diagnostics, OS repair, malware recovery, local networking configuration, workstation setup, and on-site troubleshooting.</td>
                 </tr>
                 <tr>
-                    <td><strong>Web App Maintenance & Updates</strong></td>
-                    <td>R 600 / hour</td>
-                    <td>Available as ad-hoc or monthly retainer</td>
+                    <td><strong>Custom Coding & Development</strong></td>
+                    <td>R 450.00 / hr</td>
+                    <td>Bespoke coding (JavaScript, PHP, HTML/CSS), custom API integration, database schema fixes, and complex feature development.</td>
                 </tr>
                 <tr>
-                    <td><strong>Social Media Ads Management</strong></td>
-                    <td>R 450 / hour</td>
-                    <td>Campaign setup, targeting & creative copy</td>
+                    <td><strong>Digital Ad Campaigns</strong></td>
+                    <td>R 300.00 / hr</td>
+                    <td>
+                        Campaign structure, ad copy design, audience targeting, conversion tracking, and analytics reporting.
+                        <div class="ad-platforms">
+                            <span class="ad-tag">Google Ads</span>
+                            <span class="ad-tag">Facebook Ads</span>
+                            <span class="ad-tag">LinkedIn Ads</span>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-
     <footer>
-        <p>Contact: <a href="mailto:hendrik@workingwebwizard.site" style="color: var(--accent);">hendrik@workingwebwizard.site</a> | Serving George and Surrounds, Western Cape</p>
-        <p style="margin-top: 5px;">&copy; Working Web Wizard. All rights reserved.</p>
+        <p>Contact: <a href="mailto:hendrik@workingwebwizard.site">hendrik@workingwebwizard.site</a> | Call/WhatsApp: (082) 452 5059[span_0](start_span)[span_0](end_span)</p>
+        <p style="margin-top: 5px;">Serving George & Surrounds, Western Cape | <a href="#legal" id="legal">Terms & Legal Documentation</a></p>
+        <p style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">&copy; Working Web Wizard. All rights reserved.</p>
     </footer>
 </div>
-
 
 </body>
 </html>
